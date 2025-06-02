@@ -9,6 +9,8 @@ int main() {
     float area1, area2;                     // Área em km²
     float pib1, pib2;                       // PIB em bilhões de reais
     int pontosTuristicos1, pontosTuristicos2; // Número de pontos turísticos
+    float densidade1, densidade2;
+    float pibPerCapita1, pibPerCapita2;
 
     // Entrada dos dados para a Carta 1
     printf("Cadastro da Carta 1:\n");
@@ -26,8 +28,10 @@ int main() {
     scanf("%f", &pib1);                     // Lê um número decimal (float)
     printf("Informe o número de pontos turísticos: ");
     scanf("%d", &pontosTuristicos1);       // Lê um número inteiro
+    densidade1 = populacao1 / area1;      // Cálculo da densidade populacional: número de habitantes por km²
+    pibPerCapita1 = (pib1 * 1000000000) / populacao1; // Cálculo do PIB per capita: multiplicamos (em bilhões) por 1 bilhão para converter em reais
 
-    // Entrada dos dados para a Carta 2 (igual à Carta 1)
+    // Entrada dos dados para a Carta 2
     printf("\nCadastro da Carta 2:\n");
     printf("Informe o estado (letra de A a H): ");
     scanf(" %c", &estado2);
@@ -43,14 +47,16 @@ int main() {
     scanf("%f", &pib2);
     printf("Informe o número de pontos turísticos: ");
     scanf("%d", &pontosTuristicos2);
+    densidade2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
 
     // Exibição dos dados da Carta 1 formatados
-    printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n",
-           estado1, codigo1, nomeCidade1, populacao1, area1, pib1, pontosTuristicos1);
+    printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n",
+           estado1, codigo1, nomeCidade1, populacao1, area1, pib1, pontosTuristicos1, densidade1, pibPerCapita1);
 
     // Exibição dos dados da Carta 2 formatados
-    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n",
-           estado2, codigo2, nomeCidade2, populacao2, area2, pib2, pontosTuristicos2);
+    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\n",
+           estado2, codigo2, nomeCidade2, populacao2, area2, pib2, pontosTuristicos2, densidade2, pibPerCapita2);
 
     return 0; // Finaliza o programa
 }
